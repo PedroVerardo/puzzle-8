@@ -1,0 +1,3 @@
+Tempo de execução: 38.0226526260376 segundos
+Número de estados: 181440
+Número de arestas: 483843
