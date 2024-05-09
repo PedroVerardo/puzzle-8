@@ -12,7 +12,7 @@ def BFS(grafo: dict,  start_node: str):
         l.append([])
         for node in l[i-1]:
             for neighbor in grafo[node]:
-                neighbor_string = np.array2string(neighbor, separator=', ')
+                neighbor_string = np.array2string(neighbor, separator=',')
                 if neighbor_string not in visited:
                     l[i].append(neighbor_string)
         if len(l[i]) == 0:
