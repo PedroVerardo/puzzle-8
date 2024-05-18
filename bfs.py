@@ -9,7 +9,8 @@ class BFS_ENV():
         self.visited = set()
         self.parents = dict()
 
-    def _BFS(self,  start_node: str):
+    def _BFS(self,  start_node):
+        start_node = str(start_node)
         i = 1
         l = []
         l.append([start_node])
@@ -27,18 +28,19 @@ class BFS_ENV():
                 return l
             i+=1
             
-    def BFS(self):
+    def get_qtd_componentes_conexos(self):
         self._reset()
         cont = 0
         for i in self.grafo.keys():
             if i not in self.visited:
                 cont+=1
-                print(f'Componentes conexos: {cont}')
+                # print(f'Componentes conexos: {cont}')
                 self._BFS(i)
-        self._reset()
         return cont
 
     def get_menor_caminho(self, start_node, end_node):
+        start_node = str(start_node)
+        end_node = str(end_node)
         self._reset()
         self._BFS(start_node)
         caminho = []
@@ -50,6 +52,7 @@ class BFS_ENV():
         return caminho
     
     def get_cfg_mais_dificeis(self, end_node):
+        end_node = str(end_node)
         self._reset()
         camadas = self._BFS(end_node)
         camada_mais_distante = camadas[-2]
