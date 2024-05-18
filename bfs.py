@@ -1,4 +1,3 @@
-import numpy as np
 
 class BFS_ENV():
     def __init__(self, grafo: dict):
@@ -14,19 +13,18 @@ class BFS_ENV():
             l.append([])
             for node in l[i-1]:
                 for neighbor in self.grafo[node]:
-                    neighbor_string = str(neighbor)
-                    if neighbor_string not in self.visited:
-                        l[i].append(neighbor_string)
-                        self.visited.add(neighbor_string)
+                    if neighbor not in self.visited:
+                        l[i].append(neighbor)
+                        self.visited.add(neighbor)
             if len(l[i]) == 0:
                 return l
             i+=1
             
     def BFS(self):
-        cont = 1
+        cont = 0
         for i in self.grafo.keys():
-            print(f'\rComponentes conexos: {cont}', end='')
             if i not in self.visited:
                 cont+=1
+                print(f'Componentes conexos: {cont}')
                 self._BFS(i)
         return cont

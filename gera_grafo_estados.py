@@ -23,28 +23,28 @@ def get_vizinhos(no,vazio=9):
         vizinho = no.copy()
         vizinho[i] = no[i+3]
         vizinho[i+3] = no[i]
-        nos_vizinhos.append(vizinho)
+        nos_vizinhos.append(str(vizinho))
 
     # buraco não está em cima
     if i > 2:
         vizinho = no.copy()
         vizinho[i] = no[i-3]
         vizinho[i-3] = no[i]
-        nos_vizinhos.append(vizinho)
+        nos_vizinhos.append(str(vizinho))
 
     # buraco não está na esquerda
     if i%3 > 0:
         vizinho = no.copy()
         vizinho[i] = no[i-1]
         vizinho[i-1] = no[i]
-        nos_vizinhos.append(vizinho)
+        nos_vizinhos.append(str(vizinho))
 
     # buraco não está na direita
     if i%3 < 2:
         vizinho = no.copy()
         vizinho[i] = no[i+1]
         vizinho[i+1] = no[i]
-        nos_vizinhos.append(vizinho)
+        nos_vizinhos.append(str(vizinho))
 
     return nos_vizinhos
 
