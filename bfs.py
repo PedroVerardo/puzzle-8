@@ -14,7 +14,7 @@ class BFS_ENV():
             l.append([])
             for node in l[i-1]:
                 for neighbor in self.grafo[node]:
-                    neighbor_string = np.array2string(neighbor, separator=', ')
+                    neighbor_string = str(neighbor)
                     if neighbor_string not in self.visited:
                         l[i].append(neighbor_string)
                         self.visited.add(neighbor_string)

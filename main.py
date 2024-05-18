@@ -1,9 +1,7 @@
-from state_graph import gera_grafo_estados
-from state_graph import gera_grafo_aleatorio
+import gera_grafo_estados
 from bfs import BFS_ENV
 
-estado_ini = gera_grafo_aleatorio()
-grafo = gera_grafo_estados(estado_ini)
+grafo = gera_grafo_estados.gera_grafo()
 
 bfs_env = BFS_ENV(grafo)
 
